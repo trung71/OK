@@ -1,0 +1,27 @@
+[Client] Loading pretrained ConvNeXt ONCE...
+[Client] Base model cached in RAM
+
+[Client 4 | IP=client4] ===== SERVER ROUND 1 =====
+[Client 4] Received GLOBAL_MODEL (server_round=1)
+[Client 4] Starting HPO (warm-up)
+[I 2026-01-28 00:01:25,843] A new study created in memory with name: no-name-1888c164-14b9-464b-aecd-3a2691d7231c
+[Client 4] HPO 1/5 (20.0%)
+[Client 4] HPO subset cached in RAM
+/home/trung-don/.local/lib/python3.10/site-packages/torch/nn/modules/conv.py:456: UserWarning: Applied workaround for CuDNN issue, install nvrtc.so (Triggered internally at ../aten/src/ATen/native/cudnn/Conv_v8.cpp:80.)
+  return F.conv2d(input, weight, bias, self.stride,
+[Client 4] HPO 2/5 (40.0%)
+[I 2026-01-28 00:05:07,127] Trial 0 finished with value: 6.780702752435875 and parameters: {'lr': 0.0018170629260816555, 'weight_decay': 2.5946087576514666e-05, 'batch_size': 16, 'local_epochs': 2}. Best is trial 0 with value: 6.780702752435875.
+[HPO] No improvement (1/3)
+[Client 4] HPO 3/5 (60.0%)
+[I 2026-01-28 00:08:28,966] Trial 1 finished with value: 6.811965315479302 and parameters: {'lr': 0.0015747350232410944, 'weight_decay': 5.5855432513921494e-05, 'batch_size': 64, 'local_epochs': 2}. Best is trial 0 with value: 6.780702752435875.
+[HPO] No improvement (2/3)
+[Client 4] HPO 4/5 (80.0%)
+[I 2026-01-28 00:10:58,861] Trial 2 finished with value: 6.876742697692905 and parameters: {'lr': 0.00022890032487951287, 'weight_decay': 0.00013044985235794343, 'batch_size': 16, 'local_epochs': 1}. Best is trial 0 with value: 6.780702752435875.
+[HPO] No improvement (3/3)
+[HPO] Hyperparameters stabilized -> STOP
+[I 2026-01-28 00:13:23,371] Trial 3 finished with value: 6.844730093940404 and parameters: {'lr': 0.0010660424617352615, 'weight_decay': 1.856914950370234e-05, 'batch_size': 32, 'local_epochs': 1}. Best is trial 0 with value: 6.780702752435875.
+[Client 4] HPO DONE after 4 trials
+[Client 4] Best params = {'lr': 0.0018170629260816555, 'weight_decay': 2.5946087576514666e-05, 'batch_size': 16, 'local_epochs': 2}
+[Client 4] HPO DONE (time = 717.53s | 11.96 min)
+[Client 4] Freeze backbone (server_round=1)
+[Client 4] Local TRAIN DONE (server_round=1, epochs_run=2/2, time=1607.82s)
